@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="label" id="greeting">Selamat pagi,</p>
+        <h1 id="userName">Teman</h1>
+      </div>
+      <div class="top-row">
+        <div class="clock">
+          <strong id="time">00:00:00</strong>
+          <span id="date">Jumat, 1 Januari 2026</span>
+        </div>
+        <label class="toggle">
+          <input id="themeToggle" type="checkbox">
+          <span>Dark</span>
+        </label>
+      </div>
+    </header>
+    
+    <section class="card compact">
+      <div class="card-head">
+        <h2>Nama custom</h2>
+      </div>
+      <div class="input-row">
+        <input id="nameInput" type="text" placeholder="Masukkan nama" />
+        <button id="saveNameBtn">Simpan</button>
+      </div>
+      <p class="Error" id="nameError"></p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-head">
+          <h2>Focus timer</h2>
+          <small>Durasi menit</small>
+        </div>
+        <div class="timer" id="timer">25:00</div>
+        <div class="control-row">
+          <input id="timerMinutes" type="number" min="1" value="25" title="Durasi" /></div>
+          <div class="button-group">
+          <button id="startBtn">Mulai</button>
+          <button id="stopBtn">Henti</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+        <div class="input-row">
+          <label>
+            Suara selesai
+            <input id="soundInput" type="file" accept="audio/*" />
+          </label>
+          <button id="resetSoundBtn" type="button">Reset default</button>
+          <p class="hint" id="soundHint">Gunakan suara default atau pilih file audio sendiri.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>To-do list</h2>
+          <small>Tambah, edit, selesai, hapus</small>
+        </div>
+        <div class="input-row sort-row">
+          <select id="sortSelect">
+            <option value="default">Urutan default</option>
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="active">Belum selesai dulu</option>
+            <option value="done">Selesai dulu</option>
+          </select>
+        </div>
+        <div class="input-row">
+          <input id="taskInput" type="text" placeholder="Tambah tugas baru" />
+          <button id="addTaskBtn">Tambah</button>
+        </div>
+        <p class="error" id="taskHint"></p>
+        <ul id="taskList" class="list"></ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Quick links</h2>
+          <small>Simpan shortcut ke situs favorit</small>
+        </div>
+        <div class="input-row">
+          <input id="linkName" type="text" placeholder="Nama link" />
+          <input id="linkUrl" type="text" placeholder="URL (contoh: google.com)" />
+          <button id="addLinkBtn">Simpan</button>
+        </div>
+        <ul id="linkList" class="links"></ul>
+      </article>
+    </section>
+
+    <p class="footer">Semua data tersimpan lokal di browser. Reload untuk melanjutkan.</p>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
